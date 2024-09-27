@@ -1,10 +1,7 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
-const allCommands = require('../commands')
 const { ipcMain } = require('electron')
 const commands = require('../commands')
-const { exec } = require('child_process')
-
 
 console.log(path.join(__dirname))
 
@@ -19,18 +16,12 @@ const createWindow = () => {
     }
   })
 
-  // ipcMain.on('dados', (event) => {
-
-  //   event.sender.send('dados', somarValores(2, 2));
-  // })
-
   win.loadFile(path.join(__dirname, '../renderer/index.html'));
 }
 
 app.whenReady().then(() => {
   createWindow()
 
-  // Função genérica para executar comandos
   ipcMain.on('executar-comando', async (event, commandName, commandString) => {
     try {
       const commandResult = await commands.allCommands(commandString);
