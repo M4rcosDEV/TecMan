@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Comandos exec!</title>
+  </head>
+
+  <body>
+    <h1>Comandos exec!</h1>
+    <p>👋</p>
+    <p id="info"></p>
+    <div id="loading" style="display: none;">Carregando...</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script src="../electron/renderer.js"></script>
+</html>
